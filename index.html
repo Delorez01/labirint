@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.box{
+			background-image: url("oleg.jpg");
+			background-size: 100% 100%;
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			transition: 0.5s;
+			border-radius: 500px;
+			top: 400px;
+			left: 100px;
+		}
+
+		.b{
+			background: red;
+			height: 100px;
+			width: 100px;
+			position: absolute;
+		}
+
+		.finish {
+			background: black;
+			height: 925px;
+			width: 75px;
+			position: absolute;
+			left: 1800px;
+		}
+	</style>
+</head>
+<body>
+	Дойди до финиша не задивая кубики. Двигаться на W,A,S,D
+	<div class="box">
+		
+	</div>
+
+	
+
+
+	<div class="b" style="top: 700px; left: 300px;">
+		
+	</div>
+	<div class="b" style="top: 500px; left: 900px;">
+		
+	</div>
+	<div class="b" style="top: 600px; left: 1400px;">
+		
+	</div>
+	<div class="b" style="left: 700px;">
+		
+	</div>
+	<div class="b" style="top: 200px; left: 300px;">
+		
+	</div>
+	<div class="b" style="top: 100px; left: 1500px;">
+		
+	</div>
+	<div class="b" style="top: 400px; left: 500px;">
+		
+	</div>
+	<div class="b" style="top: 800px; left: 800px;">
+		
+	</div>
+	<div class="b" style="top: 300px; left: 1200px;">
+		
+	</div>
+
+
+
+	<div class="finish">
+		<h1 style="color: white; transform: rotate(90deg); margin-top: 440px;">Finish</h1>
+	</div>
+
+	<div style="height: 100px; width: 1900px; position: absolute; top: 950px;">
+		
+	</div>
+	<div style="background: green; height: 100px; width: 1900px; position: absolute; top: -100px;">
+		
+	</div>
+	<div style="background: green; height: 900px; width: 100px; position: absolute; top: 0px; left: -100px;">
+		
+	</div>
+
+
+	<script type="text/javascript">
+		let box = document.querySelector(".box")
+		let left = 100
+		let up = 400
+		document.addEventListener("keyup", function(event) {
+			
+
+			if(event.key == "d" || event.key == "D" || event.key == "в" || event.key == "В") {
+				left = left + 100
+				box.style.left = left + "px"
+				console.log(left)
+				if(left >= 1800) {
+					alert("You win!")
+				}
+
+				if ((left == 1500 && up == 150) || (left == 500 && up == 400) || (left == 300 && up ==200) || (left == 700 && up == 0) || (left == 1400 && up == 600) || (left == 900 && up == 500) || (left == 300 && up == 700) || (left == 1500 && up==100) || (left == 800 && up == 800) || (left == 1200 && up == 300)) {
+					alert("Ты задел кубик. Ты проиграл!")
+					location.reload()
+				}
+			}
+
+			if(event.key == "a" || event.key == "A" || event.key == "ф" || event.key == "Ф") {
+				left = left - 100
+				box.style.left = left + "px"
+
+				if ((left == 1500 && up == 150) || (left == 500 && up == 400) || (left == 300 && up ==200) || (left == 700 && up == 0) || (left == 1400 && up == 600) || (left == 900 && up == 500) || (left == 300 && up == 700) || (left == 1500 && up==100) || (left == 800 && up == 800) || (left == 1200 && up == 300)) {
+					alert("Ты задел кубик. Ты проиграл!")
+					location.reload()
+				}
+
+				if (left <= 50) {
+					left = left + 100
+					box.style.left = left
+				}
+			}
+
+			if(event.key == "s" || event.key == "S" || event.key == "ы" || event.key == "Ы") {
+				up = up + 100
+				box.style.top = up + "px"
+
+				if ((left == 1500 && up == 150) || (left == 500 && up == 400) || (left == 300 && up ==200) || (left == 700 && up == 0) || (left == 1400 && up == 600) || (left == 900 && up == 500) || (left == 300 && up == 700) || (left == 1500 && up==100) || (left == 800 && up == 800) || (left == 1200 && up == 300)) {
+					alert("Ты задел кубик. Ты проиграл!")
+					location.reload()
+				}
+
+				if (up >= 800) {
+					up = up - 100
+					box.style.top = up
+				}
+			}
+
+			if(event.key == "w" || event.key == "W" || event.key == "ц" || event.key == "Ц") {
+				up = up - 100
+				box.style.top = up + "px"
+				console.log(up)
+
+				if ((left == 1500 && up == 150) || (left == 500 && up == 400) || (left == 300 && up ==200) || (left == 700 && up == 0) || (left == 1400 && up == 600) || (left == 900 && up == 500) || (left == 300 && up == 700) || (left == 1500 && up==100) || (left == 800 && up == 800) || (left == 1200 && up == 300)) {
+					alert("Ты задел кубик. Ты проиграл!")
+					location.reload()
+				}
+
+				if (up <= 90) {
+					up = up + 100
+					box.style.top = up
+				}
+			}
+
+
+
+			
+		})
+
+		
+	</script>
+</body>
+</html>
